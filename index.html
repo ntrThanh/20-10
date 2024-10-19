@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container__input {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container__input-item {
+        padding: 20px;
+        width: 50%;
+        background-color: rgb(255, 226, 231); 
+        border-radius: 10px;
+      }
+
+      .container__input-btn {
+        margin-top: 10px;
+        background-color: pink;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .container__input-inp {
+        width: 80%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid pink;
+      }
+    </style>
+
+    <script>
+      function redirectToPage() {
+        // Lấy giá trị từ ô nhập liệu
+        const username = document.getElementById("username").value;
+
+        // Kiểm tra nếu có giá trị
+        if (username) {
+          // Chuyển hướng đến trang với tên vừa nhập
+          window.location.href = "main.html?name=" + encodeURIComponent(username);
+        } else {
+          alert("Web của tôi nên không sợ bị hack đâu :v");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container__input">
+      <div class="container__input-item">
+        <form action="main.html">
+          <input type="text" name="" id="username" placeholder="Mời nhập tên" class="container__input-inp"/>
+        </form>
+
+        <button class="container__input-btn" onclick="redirectToPage()">Click me</button>
+      </div>
+    </div>
+  </body>
+</html>
